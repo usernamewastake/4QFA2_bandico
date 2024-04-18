@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table But No Restrictions</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
+        *{
+            font-family: "Yatra One", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <h3>Enter two numbers:</h3>
+    <label for="numberone">First Number:</label>
+    <input type="number" id="numberone">
+    <label for="numbertwo">Second Number:</label>
+    <input type="number" id="numbertwo">
+    <button onclick="submitForm()">Submit</button>
+    <div id="table"></div>
+    <script>
+        function submitForm() {
+            var firstNum = document.getElementById("numberone").value;
+            var secondNum = document.getElementById("numbertwo").value;
+                var table = '<table border="1">';
+                var count = 1;
+                while (count <= firstNum) {
+                    table += '<tr>'; 
+                    var countTwo = 1;
+                    while (countTwo <= secondNum) {
+                        table += '<td>' + (count*countTwo) + '</td>';
+                        countTwo++;
+                    }
+                    count++;
+                }
+                document.getElementById("table").innerHTML = table;
+        }
+    </script>
+</body>
+</html>
